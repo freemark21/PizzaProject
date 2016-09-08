@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form1
+    partial class frmPizzaPOS
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpCustomerInfo = new System.Windows.Forms.GroupBox();
+            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.grpCustomerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grpCustomerInfo
             // 
-            this.groupBox1.Font = new System.Drawing.Font("Book Antiqua", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 426);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Customer Info";
+            this.grpCustomerInfo.Controls.Add(this.lblPhone);
+            this.grpCustomerInfo.Controls.Add(this.txtPhone);
+            this.grpCustomerInfo.Font = new System.Drawing.Font("Book Antiqua", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpCustomerInfo.Location = new System.Drawing.Point(13, 12);
+            this.grpCustomerInfo.Name = "grpCustomerInfo";
+            this.grpCustomerInfo.Size = new System.Drawing.Size(340, 427);
+            this.grpCustomerInfo.TabIndex = 0;
+            this.grpCustomerInfo.TabStop = false;
+            this.grpCustomerInfo.Text = "Customer Info";
             // 
-            // Form1
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(112, 45);
+            this.txtPhone.Mask = "(999) 000-0000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(164, 36);
+            this.txtPhone.TabIndex = 0;
+            this.txtPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(6, 45);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(100, 36);
+            this.lblPhone.TabIndex = 1;
+            this.lblPhone.Text = "Phone:";
+            this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // frmPizzaPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 451);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.grpCustomerInfo);
+            this.Name = "frmPizzaPOS";
+            this.Text = "Pizzageddon POS";
+            this.grpCustomerInfo.ResumeLayout(false);
+            this.grpCustomerInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpCustomerInfo;
+        private System.Windows.Forms.MaskedTextBox txtPhone;
+        private System.Windows.Forms.Label lblPhone;
     }
 }
 
