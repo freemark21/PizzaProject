@@ -28,241 +28,325 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpCustomerInfo = new System.Windows.Forms.GroupBox();
+            this.boxCustomerInfo = new System.Windows.Forms.GroupBox();
+            this.txtZip = new System.Windows.Forms.MaskedTextBox();
+            this.drpState = new System.Windows.Forms.ComboBox();
+            this.lblZip = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.txtAddress2 = new System.Windows.Forms.TextBox();
+            this.lblAddress2 = new System.Windows.Forms.Label();
+            this.txtAddress1 = new System.Windows.Forms.TextBox();
+            this.lblAddress1 = new System.Windows.Forms.Label();
+            this.lblCustName = new System.Windows.Forms.Label();
+            this.txtCustName = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
-            this.txtCustName = new System.Windows.Forms.TextBox();
-            this.lblCustName = new System.Windows.Forms.Label();
-            this.lblAddress1 = new System.Windows.Forms.Label();
-            this.txtAddress1 = new System.Windows.Forms.TextBox();
-            this.lblAddress2 = new System.Windows.Forms.Label();
-            this.txtAddress2 = new System.Windows.Forms.TextBox();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblState = new System.Windows.Forms.Label();
-            this.lblZip = new System.Windows.Forms.Label();
-            this.drpState = new System.Windows.Forms.ComboBox();
-            this.txtZip = new System.Windows.Forms.MaskedTextBox();
             this.lblPizzageddon = new System.Windows.Forms.Label();
             this.picPizzageddon = new System.Windows.Forms.PictureBox();
             this.lblTimeDate = new System.Windows.Forms.Label();
             this.lblOrderNum = new System.Windows.Forms.Label();
-            this.grpCustomerInfo.SuspendLayout();
+            this.boxOrderInfo = new System.Windows.Forms.GroupBox();
+            this.boxPizzaSize = new System.Windows.Forms.GroupBox();
+            this.boxPizzaToppings = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.boxCustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).BeginInit();
+            this.boxOrderInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
-            // grpCustomerInfo
+            // boxCustomerInfo
             // 
-            this.grpCustomerInfo.Controls.Add(this.txtZip);
-            this.grpCustomerInfo.Controls.Add(this.drpState);
-            this.grpCustomerInfo.Controls.Add(this.lblZip);
-            this.grpCustomerInfo.Controls.Add(this.lblState);
-            this.grpCustomerInfo.Controls.Add(this.textBox1);
-            this.grpCustomerInfo.Controls.Add(this.lblCity);
-            this.grpCustomerInfo.Controls.Add(this.txtAddress2);
-            this.grpCustomerInfo.Controls.Add(this.lblAddress2);
-            this.grpCustomerInfo.Controls.Add(this.txtAddress1);
-            this.grpCustomerInfo.Controls.Add(this.lblAddress1);
-            this.grpCustomerInfo.Controls.Add(this.lblCustName);
-            this.grpCustomerInfo.Controls.Add(this.txtCustName);
-            this.grpCustomerInfo.Controls.Add(this.lblPhone);
-            this.grpCustomerInfo.Controls.Add(this.txtPhone);
-            this.grpCustomerInfo.Font = new System.Drawing.Font("Book Antiqua", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCustomerInfo.Location = new System.Drawing.Point(12, 126);
-            this.grpCustomerInfo.Name = "grpCustomerInfo";
-            this.grpCustomerInfo.Size = new System.Drawing.Size(452, 499);
-            this.grpCustomerInfo.TabIndex = 0;
-            this.grpCustomerInfo.TabStop = false;
-            this.grpCustomerInfo.Text = "Customer Info";
+            this.boxCustomerInfo.Controls.Add(this.txtZip);
+            this.boxCustomerInfo.Controls.Add(this.drpState);
+            this.boxCustomerInfo.Controls.Add(this.lblZip);
+            this.boxCustomerInfo.Controls.Add(this.lblState);
+            this.boxCustomerInfo.Controls.Add(this.textBox1);
+            this.boxCustomerInfo.Controls.Add(this.lblCity);
+            this.boxCustomerInfo.Controls.Add(this.txtAddress2);
+            this.boxCustomerInfo.Controls.Add(this.lblAddress2);
+            this.boxCustomerInfo.Controls.Add(this.txtAddress1);
+            this.boxCustomerInfo.Controls.Add(this.lblAddress1);
+            this.boxCustomerInfo.Controls.Add(this.lblCustName);
+            this.boxCustomerInfo.Controls.Add(this.txtCustName);
+            this.boxCustomerInfo.Controls.Add(this.lblPhone);
+            this.boxCustomerInfo.Controls.Add(this.txtPhone);
+            this.boxCustomerInfo.Font = new System.Drawing.Font("Book Antiqua", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxCustomerInfo.Location = new System.Drawing.Point(11, 101);
+            this.boxCustomerInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boxCustomerInfo.Name = "boxCustomerInfo";
+            this.boxCustomerInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boxCustomerInfo.Size = new System.Drawing.Size(402, 399);
+            this.boxCustomerInfo.TabIndex = 0;
+            this.boxCustomerInfo.TabStop = false;
+            this.boxCustomerInfo.Text = "Customer Info";
             // 
-            // lblPhone
+            // txtZip
             // 
-            this.lblPhone.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(66, 45);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(100, 36);
-            this.lblPhone.TabIndex = 1;
-            this.lblPhone.Text = "Phone:";
-            this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(172, 45);
-            this.txtPhone.Mask = "(999) 000-0000";
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(164, 36);
-            this.txtPhone.TabIndex = 0;
-            this.txtPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // txtCustName
-            // 
-            this.txtCustName.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustName.Location = new System.Drawing.Point(11, 115);
-            this.txtCustName.MaxLength = 25;
-            this.txtCustName.Name = "txtCustName";
-            this.txtCustName.Size = new System.Drawing.Size(427, 32);
-            this.txtCustName.TabIndex = 2;
-            // 
-            // lblCustName
-            // 
-            this.lblCustName.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustName.Location = new System.Drawing.Point(124, 84);
-            this.lblCustName.Name = "lblCustName";
-            this.lblCustName.Size = new System.Drawing.Size(193, 28);
-            this.lblCustName.TabIndex = 3;
-            this.lblCustName.Text = "Customer Name";
-            this.lblCustName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCustName.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblAddress1
-            // 
-            this.lblAddress1.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress1.Location = new System.Drawing.Point(6, 175);
-            this.lblAddress1.Name = "lblAddress1";
-            this.lblAddress1.Size = new System.Drawing.Size(123, 32);
-            this.lblAddress1.TabIndex = 4;
-            this.lblAddress1.Text = "Address 1";
-            this.lblAddress1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtAddress1
-            // 
-            this.txtAddress1.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress1.Location = new System.Drawing.Point(11, 210);
-            this.txtAddress1.MaxLength = 25;
-            this.txtAddress1.Name = "txtAddress1";
-            this.txtAddress1.Size = new System.Drawing.Size(427, 32);
-            this.txtAddress1.TabIndex = 5;
-            // 
-            // lblAddress2
-            // 
-            this.lblAddress2.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress2.Location = new System.Drawing.Point(6, 245);
-            this.lblAddress2.Name = "lblAddress2";
-            this.lblAddress2.Size = new System.Drawing.Size(123, 32);
-            this.lblAddress2.TabIndex = 6;
-            this.lblAddress2.Text = "Address 2";
-            this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtAddress2
-            // 
-            this.txtAddress2.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress2.Location = new System.Drawing.Point(11, 280);
-            this.txtAddress2.MaxLength = 25;
-            this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(427, 32);
-            this.txtAddress2.TabIndex = 7;
-            // 
-            // lblCity
-            // 
-            this.lblCity.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(6, 315);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(123, 32);
-            this.lblCity.TabIndex = 8;
-            this.lblCity.Text = "City";
-            this.lblCity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(11, 350);
-            this.textBox1.MaxLength = 25;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(427, 32);
-            this.textBox1.TabIndex = 9;
-            // 
-            // lblState
-            // 
-            this.lblState.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.Location = new System.Drawing.Point(6, 385);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(123, 32);
-            this.lblState.TabIndex = 10;
-            this.lblState.Text = "State";
-            this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblZip
-            // 
-            this.lblZip.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblZip.Location = new System.Drawing.Point(213, 385);
-            this.lblZip.Name = "lblZip";
-            this.lblZip.Size = new System.Drawing.Size(123, 32);
-            this.lblZip.TabIndex = 11;
-            this.lblZip.Text = "Zip";
-            this.lblZip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtZip.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZip.Location = new System.Drawing.Point(194, 336);
+            this.txtZip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtZip.Mask = "00000-9999";
+            this.txtZip.Name = "txtZip";
+            this.txtZip.Size = new System.Drawing.Size(94, 28);
+            this.txtZip.TabIndex = 13;
             // 
             // drpState
             // 
             this.drpState.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drpState.FormattingEnabled = true;
-            this.drpState.Location = new System.Drawing.Point(11, 420);
+            this.drpState.Location = new System.Drawing.Point(10, 336);
+            this.drpState.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drpState.MaxDropDownItems = 50;
             this.drpState.Name = "drpState";
-            this.drpState.Size = new System.Drawing.Size(90, 32);
+            this.drpState.Size = new System.Drawing.Size(80, 30);
             this.drpState.TabIndex = 12;
             // 
-            // txtZip
+            // lblZip
             // 
-            this.txtZip.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZip.Location = new System.Drawing.Point(218, 420);
-            this.txtZip.Mask = "00000-9999";
-            this.txtZip.Name = "txtZip";
-            this.txtZip.Size = new System.Drawing.Size(105, 32);
-            this.txtZip.TabIndex = 13;
+            this.lblZip.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZip.Location = new System.Drawing.Point(189, 308);
+            this.lblZip.Name = "lblZip";
+            this.lblZip.Size = new System.Drawing.Size(109, 26);
+            this.lblZip.TabIndex = 11;
+            this.lblZip.Text = "Zip";
+            this.lblZip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblState
+            // 
+            this.lblState.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblState.Location = new System.Drawing.Point(5, 308);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(109, 26);
+            this.lblState.TabIndex = 10;
+            this.lblState.Text = "State";
+            this.lblState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(10, 280);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.MaxLength = 25;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(380, 28);
+            this.textBox1.TabIndex = 9;
+            // 
+            // lblCity
+            // 
+            this.lblCity.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(5, 252);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(109, 26);
+            this.lblCity.TabIndex = 8;
+            this.lblCity.Text = "City";
+            this.lblCity.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtAddress2
+            // 
+            this.txtAddress2.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress2.Location = new System.Drawing.Point(10, 224);
+            this.txtAddress2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress2.MaxLength = 25;
+            this.txtAddress2.Name = "txtAddress2";
+            this.txtAddress2.Size = new System.Drawing.Size(380, 28);
+            this.txtAddress2.TabIndex = 7;
+            // 
+            // lblAddress2
+            // 
+            this.lblAddress2.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress2.Location = new System.Drawing.Point(5, 196);
+            this.lblAddress2.Name = "lblAddress2";
+            this.lblAddress2.Size = new System.Drawing.Size(109, 26);
+            this.lblAddress2.TabIndex = 6;
+            this.lblAddress2.Text = "Address 2";
+            this.lblAddress2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtAddress1
+            // 
+            this.txtAddress1.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress1.Location = new System.Drawing.Point(10, 168);
+            this.txtAddress1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress1.MaxLength = 25;
+            this.txtAddress1.Name = "txtAddress1";
+            this.txtAddress1.Size = new System.Drawing.Size(380, 28);
+            this.txtAddress1.TabIndex = 5;
+            // 
+            // lblAddress1
+            // 
+            this.lblAddress1.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress1.Location = new System.Drawing.Point(5, 140);
+            this.lblAddress1.Name = "lblAddress1";
+            this.lblAddress1.Size = new System.Drawing.Size(109, 26);
+            this.lblAddress1.TabIndex = 4;
+            this.lblAddress1.Text = "Address 1";
+            this.lblAddress1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCustName
+            // 
+            this.lblCustName.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustName.Location = new System.Drawing.Point(110, 67);
+            this.lblCustName.Name = "lblCustName";
+            this.lblCustName.Size = new System.Drawing.Size(172, 22);
+            this.lblCustName.TabIndex = 3;
+            this.lblCustName.Text = "Customer Name";
+            this.lblCustName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCustName.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtCustName
+            // 
+            this.txtCustName.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustName.Location = new System.Drawing.Point(10, 92);
+            this.txtCustName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCustName.MaxLength = 25;
+            this.txtCustName.Name = "txtCustName";
+            this.txtCustName.Size = new System.Drawing.Size(380, 28);
+            this.txtCustName.TabIndex = 2;
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(59, 36);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(89, 29);
+            this.lblPhone.TabIndex = 1;
+            this.lblPhone.Text = "Phone:";
+            this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPhone.Click += new System.EventHandler(this.lblPhone_Click);
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(153, 36);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhone.Mask = "(999) 000-0000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(146, 32);
+            this.txtPhone.TabIndex = 0;
+            this.txtPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblPizzageddon
             // 
             this.lblPizzageddon.AutoSize = true;
             this.lblPizzageddon.Font = new System.Drawing.Font("Papyrus", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPizzageddon.Location = new System.Drawing.Point(190, 9);
+            this.lblPizzageddon.Location = new System.Drawing.Point(169, 7);
             this.lblPizzageddon.Name = "lblPizzageddon";
-            this.lblPizzageddon.Size = new System.Drawing.Size(439, 114);
+            this.lblPizzageddon.Size = new System.Drawing.Size(363, 94);
             this.lblPizzageddon.TabIndex = 1;
             this.lblPizzageddon.Text = "Pizzageddon";
             // 
             // picPizzageddon
             // 
+            this.picPizzageddon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picPizzageddon.Image = global::PizzaProject.Properties.Resources.Pizzageddon;
-            this.picPizzageddon.Location = new System.Drawing.Point(647, 9);
+            this.picPizzageddon.Location = new System.Drawing.Point(575, 7);
+            this.picPizzageddon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picPizzageddon.Name = "picPizzageddon";
-            this.picPizzageddon.Size = new System.Drawing.Size(167, 114);
-            this.picPizzageddon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPizzageddon.Size = new System.Drawing.Size(148, 91);
+            this.picPizzageddon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPizzageddon.TabIndex = 2;
             this.picPizzageddon.TabStop = false;
             this.picPizzageddon.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblTimeDate
             // 
-            this.lblTimeDate.Location = new System.Drawing.Point(926, 9);
+            this.lblTimeDate.Location = new System.Drawing.Point(823, 7);
             this.lblTimeDate.Name = "lblTimeDate";
-            this.lblTimeDate.Size = new System.Drawing.Size(100, 23);
+            this.lblTimeDate.Size = new System.Drawing.Size(89, 18);
             this.lblTimeDate.TabIndex = 3;
             this.lblTimeDate.Text = "Time && Date";
             // 
             // lblOrderNum
             // 
-            this.lblOrderNum.Location = new System.Drawing.Point(926, 32);
+            this.lblOrderNum.Location = new System.Drawing.Point(823, 26);
             this.lblOrderNum.Name = "lblOrderNum";
-            this.lblOrderNum.Size = new System.Drawing.Size(100, 23);
+            this.lblOrderNum.Size = new System.Drawing.Size(89, 18);
             this.lblOrderNum.TabIndex = 4;
             this.lblOrderNum.Text = "0000";
             // 
+            // boxOrderInfo
+            // 
+            this.boxOrderInfo.Controls.Add(this.numericUpDown1);
+            this.boxOrderInfo.Controls.Add(this.boxPizzaToppings);
+            this.boxOrderInfo.Controls.Add(this.boxPizzaSize);
+            this.boxOrderInfo.Font = new System.Drawing.Font("Book Antiqua", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxOrderInfo.Location = new System.Drawing.Point(435, 104);
+            this.boxOrderInfo.Name = "boxOrderInfo";
+            this.boxOrderInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.boxOrderInfo.Size = new System.Drawing.Size(464, 396);
+            this.boxOrderInfo.TabIndex = 5;
+            this.boxOrderInfo.TabStop = false;
+            this.boxOrderInfo.Text = "Order Info";
+            // 
+            // boxPizzaSize
+            // 
+            this.boxPizzaSize.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxPizzaSize.Location = new System.Drawing.Point(23, 39);
+            this.boxPizzaSize.Name = "boxPizzaSize";
+            this.boxPizzaSize.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.boxPizzaSize.Size = new System.Drawing.Size(200, 100);
+            this.boxPizzaSize.TabIndex = 0;
+            this.boxPizzaSize.TabStop = false;
+            this.boxPizzaSize.Text = "Pizza Size";
+            // 
+            // boxPizzaToppings
+            // 
+            this.boxPizzaToppings.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxPizzaToppings.Location = new System.Drawing.Point(23, 175);
+            this.boxPizzaToppings.Name = "boxPizzaToppings";
+            this.boxPizzaToppings.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.boxPizzaToppings.Size = new System.Drawing.Size(200, 100);
+            this.boxPizzaToppings.TabIndex = 2;
+            this.boxPizzaToppings.TabStop = false;
+            this.boxPizzaToppings.Text = "Pizza Toppings";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(229, 89);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.numericUpDown1.Size = new System.Drawing.Size(59, 38);
+            this.numericUpDown1.TabIndex = 3;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // frmPizzaPOS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 715);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(923, 572);
+            this.Controls.Add(this.boxOrderInfo);
             this.Controls.Add(this.lblOrderNum);
             this.Controls.Add(this.lblTimeDate);
             this.Controls.Add(this.picPizzageddon);
             this.Controls.Add(this.lblPizzageddon);
-            this.Controls.Add(this.grpCustomerInfo);
+            this.Controls.Add(this.boxCustomerInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPizzaPOS";
             this.Text = "Pizzageddon POS";
-            this.grpCustomerInfo.ResumeLayout(false);
-            this.grpCustomerInfo.PerformLayout();
+            this.boxCustomerInfo.ResumeLayout(false);
+            this.boxCustomerInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).EndInit();
+            this.boxOrderInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +354,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpCustomerInfo;
+        private System.Windows.Forms.GroupBox boxCustomerInfo;
         private System.Windows.Forms.MaskedTextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.TextBox txtCustName;
@@ -289,6 +373,10 @@
         private System.Windows.Forms.PictureBox picPizzageddon;
         private System.Windows.Forms.Label lblTimeDate;
         private System.Windows.Forms.Label lblOrderNum;
+        private System.Windows.Forms.GroupBox boxOrderInfo;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.GroupBox boxPizzaToppings;
+        private System.Windows.Forms.GroupBox boxPizzaSize;
     }
 }
 
