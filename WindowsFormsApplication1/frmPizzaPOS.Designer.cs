@@ -71,6 +71,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnPrice = new System.Windows.Forms.Button();
+            this.drpPayMethod = new System.Windows.Forms.ComboBox();
             this.boxCustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).BeginInit();
             this.boxOrderInfo.SuspendLayout();
@@ -291,6 +292,7 @@
             // 
             // boxOrderInfo
             // 
+            this.boxOrderInfo.Controls.Add(this.drpPayMethod);
             this.boxOrderInfo.Controls.Add(this.boxButtons);
             this.boxOrderInfo.Controls.Add(this.lblTotal);
             this.boxOrderInfo.Controls.Add(this.lblQty);
@@ -525,7 +527,7 @@
             this.lblTotal.Location = new System.Drawing.Point(224, 36);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTotal.Size = new System.Drawing.Size(234, 157);
+            this.lblTotal.Size = new System.Drawing.Size(234, 127);
             this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "Total";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -582,6 +584,15 @@
             this.btnPrice.TabIndex = 2;
             this.btnPrice.Text = "Price";
             this.btnPrice.UseVisualStyleBackColor = true;
+            // 
+            // drpPayMethod
+            // 
+            this.drpPayMethod.FormattingEnabled = true;
+            this.drpPayMethod.Location = new System.Drawing.Point(224, 171);
+            this.drpPayMethod.Name = "drpPayMethod";
+            this.drpPayMethod.Size = new System.Drawing.Size(234, 40);
+            this.drpPayMethod.TabIndex = 7;
+            this.drpPayMethod.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmPizzaPOS
             // 
@@ -659,6 +670,7 @@
         private System.Windows.Forms.RadioButton rdoLarge;
         private System.Windows.Forms.RadioButton rdoMedium;
         private System.Windows.Forms.RadioButton rdoSmall;
+        private System.Windows.Forms.ComboBox drpPayMethod;
     }
 }
 
