@@ -284,7 +284,7 @@
             // 
             // lblOrderNum
             // 
-            this.lblOrderNum.Location = new System.Drawing.Point(823, 26);
+            this.lblOrderNum.Location = new System.Drawing.Point(823, 25);
             this.lblOrderNum.Name = "lblOrderNum";
             this.lblOrderNum.Size = new System.Drawing.Size(89, 18);
             this.lblOrderNum.TabIndex = 4;
@@ -590,6 +590,7 @@
             this.drpPayMethod.FormattingEnabled = true;
             this.drpPayMethod.Location = new System.Drawing.Point(224, 171);
             this.drpPayMethod.Name = "drpPayMethod";
+            this.drpPayMethod.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.drpPayMethod.Size = new System.Drawing.Size(234, 40);
             this.drpPayMethod.TabIndex = 7;
             this.drpPayMethod.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -599,7 +600,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(923, 572);
+            this.ClientSize = new System.Drawing.Size(911, 512);
             this.Controls.Add(this.boxOrderInfo);
             this.Controls.Add(this.lblOrderNum);
             this.Controls.Add(this.lblTimeDate);
