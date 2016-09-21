@@ -74,6 +74,7 @@
             this.rdoMedium = new System.Windows.Forms.RadioButton();
             this.rdoSmall = new System.Windows.Forms.RadioButton();
             this.tmrDT = new System.Windows.Forms.Timer(this.components);
+            this.lblError = new System.Windows.Forms.Label();
             this.boxCustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).BeginInit();
             this.boxOrderInfo.SuspendLayout();
@@ -129,6 +130,8 @@
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.Size = new System.Drawing.Size(286, 24);
             this.txtCustName.TabIndex = 3;
+            this.txtCustName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustName_KeyPress);
+            this.txtCustName.Leave += new System.EventHandler(this.txtCustName_Leave);
             // 
             // txtCity
             // 
@@ -257,6 +260,7 @@
             this.mtbPhone.Size = new System.Drawing.Size(110, 27);
             this.mtbPhone.TabIndex = 1;
             this.mtbPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mtbPhone.Leave += new System.EventHandler(this.mtbPhone_Leave);
             // 
             // lblPizzageddon
             // 
@@ -380,6 +384,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAccept
             // 
@@ -643,12 +648,24 @@
             this.tmrDT.Interval = 1000;
             this.tmrDT.Tick += new System.EventHandler(this.tmrDT_Tick);
             // 
+            // lblError
+            // 
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(8, 411);
+            this.lblError.Name = "lblError";
+            this.lblError.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblError.Size = new System.Drawing.Size(666, 27);
+            this.lblError.TabIndex = 7;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmPizzaPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(683, 416);
+            this.ClientSize = new System.Drawing.Size(683, 447);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.boxOrderInfo);
             this.Controls.Add(this.lblOrderNum);
             this.Controls.Add(this.lblTimeDate);
@@ -659,6 +676,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPizzaPOS";
             this.Text = "Pizzageddon POS";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPizzaPOS_FormClosing_1);
             this.boxCustomerInfo.ResumeLayout(false);
             this.boxCustomerInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).EndInit();
@@ -721,6 +739,7 @@
         private System.Windows.Forms.RadioButton rdoSmall;
         private System.Windows.Forms.ComboBox drpPayMethod;
         private System.Windows.Forms.Timer tmrDT;
+        private System.Windows.Forms.Label lblError;
     }
 }
 
