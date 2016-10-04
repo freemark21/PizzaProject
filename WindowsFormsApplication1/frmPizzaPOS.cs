@@ -54,11 +54,11 @@ namespace WindowsFormsApplication1
 
         private void txtCustName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 65 && e.KeyChar <=90) // A-Z uppercase
+            if (e.KeyChar >= 65 && e.KeyChar <=90) // A-Z
             {
 
             }
-            else if (e.KeyChar >= 97 && e.KeyChar <=122) //a-z lowercase
+            else if (e.KeyChar >= 97 && e.KeyChar <=122) //a-z
             {
 
             }
@@ -94,6 +94,90 @@ namespace WindowsFormsApplication1
                 txtCustName.ForeColor = Color.Red; 
             }
 
+        }
+
+        private void txtAddress1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 65 && e.KeyChar <= 90) // A-Z
+            {
+
+            }
+            else if (e.KeyChar >= 97 && e.KeyChar <= 122) //a-z
+            {
+
+            }
+            else if (e.KeyChar == 8) //backspace
+            {
+
+            }
+            else if (e.KeyChar == 32) //spacebar
+            {
+
+            }
+            else if (e.KeyChar == 127) //delete key
+            {
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAddress2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 65 && e.KeyChar <= 90) // A-Z
+            {
+
+            }
+            else if (e.KeyChar >= 97 && e.KeyChar <= 122) //a-z
+            {
+
+            }
+            else if (e.KeyChar == 8) //backspace
+            {
+
+            }
+            else if (e.KeyChar == 32) //spacebar
+            {
+
+            }
+            else if (e.KeyChar == 127) //delete key
+            {
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 65 && e.KeyChar <= 90) // A-Z
+            {
+
+            }
+            else if (e.KeyChar >= 97 && e.KeyChar <= 122) //a-z
+            {
+
+            }
+            else if (e.KeyChar == 8) //backspace
+            {
+
+            }
+            else if (e.KeyChar == 32) //spacebar
+            {
+
+            }
+            else if (e.KeyChar == 127) //delete key
+            {
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
