@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -178,6 +179,17 @@ namespace WindowsFormsApplication1
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            mtbPhone.Text = String.Empty;
+            txtCustName.Text = String.Empty;
+            txtAddress1.Text = String.Empty;
+            txtAddress2.Text = String.Empty;
+            txtCity.Text = String.Empty;
+            //drpState.
+            mtbZip.Text = String.Empty;
         }
     }
 }
