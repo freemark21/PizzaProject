@@ -190,6 +190,9 @@ namespace WindowsFormsApplication1
             txtCity.Text = String.Empty;
             //drpState.
             mtbZip.Text = String.Empty;
+            rdoMedium.Focus();
+            nudQty.Value = 1;
+            lblError.Text = String.Empty;
         }
     }
 }
