@@ -232,5 +232,25 @@ namespace WindowsFormsApplication1
                 txtCity.ForeColor = Color.Red;
             }
         }
+
+        /*private void frmPizzaPOS_Load(object sender, EventArgs e) //Load State abbreviations
+        {
+            string filePath = Application.StartupPath + "/../../../StateAbbrev.txt";
+            string currentState;
+            try
+            {
+                FileStream fsStates = new FileStream(filePath, FileMode.Open);
+                StreamReader srStates = new StreamReader(fsStates);
+                while (!srStates.EndOfStream)
+                {
+                    currentState = srStates.ReadLine();
+                    drpState.Items.Add(currentState);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error getting list of States");
+            }
+        }*/
     }
 }

@@ -634,6 +634,7 @@
             this.Name = "frmPizzaPOS";
             this.Text = "Pizzageddon POS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPizzaPOS_FormClosing_1);
+            this.Load += new System.EventHandler(this.frmPizzaPOS_Load);
             this.boxCustomerInfo.ResumeLayout(false);
             this.boxCustomerInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).EndInit();
