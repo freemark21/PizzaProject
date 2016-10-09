@@ -138,6 +138,7 @@
             this.txtCity.Size = new System.Drawing.Size(427, 32);
             this.txtCity.TabIndex = 9;
             this.txtCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCity_KeyPress);
+            this.txtCity.Leave += new System.EventHandler(this.txtCity_Leave);
             // 
             // txtAddress2
             // 
@@ -158,6 +159,7 @@
             this.txtAddress1.Size = new System.Drawing.Size(427, 32);
             this.txtAddress1.TabIndex = 5;
             this.txtAddress1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddress1_KeyPress);
+            this.txtAddress1.Leave += new System.EventHandler(this.txtAddress1_Leave);
             // 
             // mtbZip
             // 
