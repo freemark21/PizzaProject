@@ -13,6 +13,8 @@ namespace WindowsFormsApplication1
 {
     public partial class frmPizzaPOS : Form
     {
+        public int orderTotal;
+        public double taxRate = 7.5;
         public frmPizzaPOS()
         {
             InitializeComponent();
@@ -191,16 +193,7 @@ namespace WindowsFormsApplication1
 
         private void btnReset_Click(object sender, EventArgs e) //Reset button
         {
-            mtbPhone.Text = String.Empty;
-            txtCustName.Text = String.Empty;
-            txtAddress1.Text = String.Empty;
-            txtAddress2.Text = String.Empty;
-            txtCity.Text = String.Empty;
-            //drpState.
-            mtbZip.Text = String.Empty;
-            rdoMedium.Focus();
-            nudQty.Value = 1;
-            lblError.Text = String.Empty;
+            Reset();
         }
 
         private void txtAddress1_Leave(object sender, EventArgs e) //Required field
@@ -233,8 +226,104 @@ namespace WindowsFormsApplication1
             }
         }
 
-        /*private void frmPizzaPOS_Load(object sender, EventArgs e) //Load State abbreviations
+        private void rdoSmall_CheckedChanged(object sender, EventArgs e)
         {
+            Pricing();
+        }
+
+        public void Pricing()
+        {
+            orderTotal = 0;
+            if (rdoSmall.Checked)
+            {
+                orderTotal += 8;
+            }
+            else if (rdoMedium.Checked)
+            {
+                orderTotal += 10;
+            }
+            else
+            {
+                orderTotal += 15;
+            }
+
+            if (chkBolive.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkBpepper.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkGolive.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkHam.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkJalepeno.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkMushrooms.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkOnion.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkPep.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkPineapple.Checked)
+            {
+                orderTotal += 1;
+            }
+            if (chkSausage.Checked)
+            {
+                orderTotal += 1;
+            }
+            orderTotal *= Convert.ToInt32(nudQty.Value);
+            lblTotal.Text = "TOTAL\n" + orderTotal.ToString("c");
+        }
+
+        private void btnPrice_Click(object sender, EventArgs e)
+        {
+            Pricing();
+        }
+
+        public void Reset()
+        {
+            mtbPhone.Text = String.Empty;
+            txtCustName.Text = String.Empty;
+            txtAddress1.Text = String.Empty;
+            txtAddress2.Text = String.Empty;
+            txtCity.Text = String.Empty;
+            //drpState.
+            mtbZip.Text = String.Empty;
+            nudQty.Value = 1;
+            lblError.Text = String.Empty;
+            rdoMedium.Checked = true;
+            chkPep.Checked = true;
+            chkBolive.Checked = false;
+            chkBpepper.Checked = false;
+            chkGolive.Checked = false;
+            chkHam.Checked = false;
+            chkJalepeno.Checked = false;
+            chkMushrooms.Checked = false;
+            chkOnion.Checked = false;
+            chkPineapple.Checked = false;
+            chkSausage.Checked = false;
+            Pricing();
+        }
+
+        private void frmPizzaPOS_Load(object sender, EventArgs e)
+        {
+            Reset();
             string filePath = Application.StartupPath + "/../../../StateAbbrev.txt";
             string currentState;
             try
@@ -251,6 +340,6 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Error getting list of States");
             }
-        }*/
+        }
     }
 }
