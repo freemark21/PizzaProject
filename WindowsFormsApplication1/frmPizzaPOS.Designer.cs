@@ -102,9 +102,9 @@
             this.boxCustomerInfo.Controls.Add(this.mtbPhone);
             this.boxCustomerInfo.Font = new System.Drawing.Font("Book Antiqua", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxCustomerInfo.Location = new System.Drawing.Point(8, 82);
-            this.boxCustomerInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxCustomerInfo.Margin = new System.Windows.Forms.Padding(2);
             this.boxCustomerInfo.Name = "boxCustomerInfo";
-            this.boxCustomerInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxCustomerInfo.Padding = new System.Windows.Forms.Padding(2);
             this.boxCustomerInfo.Size = new System.Drawing.Size(302, 324);
             this.boxCustomerInfo.TabIndex = 1;
             this.boxCustomerInfo.TabStop = false;
@@ -115,7 +115,7 @@
             this.drpState.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drpState.FormattingEnabled = true;
             this.drpState.Location = new System.Drawing.Point(8, 275);
-            this.drpState.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.drpState.Margin = new System.Windows.Forms.Padding(2);
             this.drpState.MaxDropDownItems = 50;
             this.drpState.Name = "drpState";
             this.drpState.Size = new System.Drawing.Size(61, 26);
@@ -125,7 +125,7 @@
             // 
             this.txtCustName.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustName.Location = new System.Drawing.Point(8, 75);
-            this.txtCustName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCustName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustName.MaxLength = 25;
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.Size = new System.Drawing.Size(286, 24);
@@ -137,7 +137,7 @@
             // 
             this.txtCity.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Location = new System.Drawing.Point(8, 228);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(2);
             this.txtCity.MaxLength = 25;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(286, 24);
@@ -149,7 +149,7 @@
             // 
             this.txtAddress2.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress2.Location = new System.Drawing.Point(8, 182);
-            this.txtAddress2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress2.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress2.MaxLength = 25;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(286, 24);
@@ -160,7 +160,7 @@
             // 
             this.txtAddress1.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress1.Location = new System.Drawing.Point(8, 136);
-            this.txtAddress1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress1.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress1.MaxLength = 25;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(286, 24);
@@ -172,11 +172,12 @@
             // 
             this.mtbZip.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbZip.Location = new System.Drawing.Point(143, 277);
-            this.mtbZip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbZip.Margin = new System.Windows.Forms.Padding(2);
             this.mtbZip.Mask = "00000-9999";
             this.mtbZip.Name = "mtbZip";
             this.mtbZip.Size = new System.Drawing.Size(72, 24);
             this.mtbZip.TabIndex = 13;
+            this.mtbZip.Leave += new System.EventHandler(this.mtbZip_Leave);
             // 
             // lblZip
             // 
@@ -259,7 +260,7 @@
             // 
             this.mtbPhone.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbPhone.Location = new System.Drawing.Point(115, 29);
-            this.mtbPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbPhone.Margin = new System.Windows.Forms.Padding(2);
             this.mtbPhone.Mask = "(999) 000-0000";
             this.mtbPhone.Name = "mtbPhone";
             this.mtbPhone.Size = new System.Drawing.Size(110, 27);
@@ -283,7 +284,7 @@
             this.picPizzageddon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picPizzageddon.Image = global::PizzaProject.Properties.Resources.Pizzageddon;
             this.picPizzageddon.Location = new System.Drawing.Point(406, 4);
-            this.picPizzageddon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picPizzageddon.Margin = new System.Windows.Forms.Padding(2);
             this.picPizzageddon.Name = "picPizzageddon";
             this.picPizzageddon.Size = new System.Drawing.Size(111, 76);
             this.picPizzageddon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -320,9 +321,9 @@
             this.boxOrderInfo.Controls.Add(this.boxPizzaSize);
             this.boxOrderInfo.Font = new System.Drawing.Font("Book Antiqua", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxOrderInfo.Location = new System.Drawing.Point(326, 84);
-            this.boxOrderInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxOrderInfo.Margin = new System.Windows.Forms.Padding(2);
             this.boxOrderInfo.Name = "boxOrderInfo";
-            this.boxOrderInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxOrderInfo.Padding = new System.Windows.Forms.Padding(2);
             this.boxOrderInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.boxOrderInfo.Size = new System.Drawing.Size(348, 322);
             this.boxOrderInfo.TabIndex = 2;
@@ -333,7 +334,7 @@
             // 
             this.drpPayMethod.FormattingEnabled = true;
             this.drpPayMethod.Location = new System.Drawing.Point(168, 139);
-            this.drpPayMethod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.drpPayMethod.Margin = new System.Windows.Forms.Padding(2);
             this.drpPayMethod.Name = "drpPayMethod";
             this.drpPayMethod.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.drpPayMethod.Size = new System.Drawing.Size(176, 35);
@@ -346,9 +347,9 @@
             this.boxButtons.Controls.Add(this.btnClose);
             this.boxButtons.Controls.Add(this.btnAccept);
             this.boxButtons.Location = new System.Drawing.Point(164, 171);
-            this.boxButtons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxButtons.Margin = new System.Windows.Forms.Padding(2);
             this.boxButtons.Name = "boxButtons";
-            this.boxButtons.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxButtons.Padding = new System.Windows.Forms.Padding(2);
             this.boxButtons.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.boxButtons.Size = new System.Drawing.Size(180, 132);
             this.boxButtons.TabIndex = 6;
@@ -359,7 +360,7 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Location = new System.Drawing.Point(91, 20);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(83, 45);
             this.btnReset.TabIndex = 1;
@@ -372,7 +373,7 @@
             this.btnPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrice.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrice.Location = new System.Drawing.Point(4, 20);
-            this.btnPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrice.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrice.Name = "btnPrice";
             this.btnPrice.Size = new System.Drawing.Size(83, 45);
             this.btnPrice.TabIndex = 0;
@@ -385,7 +386,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(91, 77);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(83, 45);
             this.btnClose.TabIndex = 3;
@@ -395,15 +396,17 @@
             // 
             // btnAccept
             // 
+            this.btnAccept.Enabled = false;
             this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccept.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccept.Location = new System.Drawing.Point(3, 76);
-            this.btnAccept.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(2);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(83, 45);
             this.btnAccept.TabIndex = 2;
             this.btnAccept.Text = "&Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // lblTotal
             // 
@@ -433,7 +436,7 @@
             // 
             this.nudQty.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudQty.Location = new System.Drawing.Point(115, 73);
-            this.nudQty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudQty.Margin = new System.Windows.Forms.Padding(2);
             this.nudQty.Maximum = new decimal(new int[] {
             10,
             0,
@@ -453,6 +456,7 @@
             0,
             0,
             0});
+            this.nudQty.ValueChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // boxPizzaToppings
             // 
@@ -468,9 +472,9 @@
             this.boxPizzaToppings.Controls.Add(this.chkPep);
             this.boxPizzaToppings.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxPizzaToppings.Location = new System.Drawing.Point(4, 134);
-            this.boxPizzaToppings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxPizzaToppings.Margin = new System.Windows.Forms.Padding(2);
             this.boxPizzaToppings.Name = "boxPizzaToppings";
-            this.boxPizzaToppings.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxPizzaToppings.Padding = new System.Windows.Forms.Padding(2);
             this.boxPizzaToppings.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.boxPizzaToppings.Size = new System.Drawing.Size(160, 169);
             this.boxPizzaToppings.TabIndex = 1;
@@ -482,120 +486,130 @@
             this.chkMushrooms.AutoSize = true;
             this.chkMushrooms.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkMushrooms.Location = new System.Drawing.Point(4, 119);
-            this.chkMushrooms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkMushrooms.Margin = new System.Windows.Forms.Padding(2);
             this.chkMushrooms.Name = "chkMushrooms";
             this.chkMushrooms.Size = new System.Drawing.Size(89, 20);
             this.chkMushrooms.TabIndex = 8;
             this.chkMushrooms.Text = "Mushrooms";
             this.chkMushrooms.UseVisualStyleBackColor = true;
+            this.chkMushrooms.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkGolive
             // 
             this.chkGolive.AutoSize = true;
             this.chkGolive.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkGolive.Location = new System.Drawing.Point(88, 37);
-            this.chkGolive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkGolive.Margin = new System.Windows.Forms.Padding(2);
             this.chkGolive.Name = "chkGolive";
             this.chkGolive.Size = new System.Drawing.Size(67, 20);
             this.chkGolive.TabIndex = 3;
             this.chkGolive.Text = "G Olive";
             this.chkGolive.UseVisualStyleBackColor = true;
+            this.chkGolive.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkOnion
             // 
             this.chkOnion.AutoSize = true;
             this.chkOnion.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkOnion.Location = new System.Drawing.Point(4, 39);
-            this.chkOnion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkOnion.Margin = new System.Windows.Forms.Padding(2);
             this.chkOnion.Name = "chkOnion";
             this.chkOnion.Size = new System.Drawing.Size(60, 20);
             this.chkOnion.TabIndex = 2;
             this.chkOnion.Text = "Onion";
             this.chkOnion.UseVisualStyleBackColor = true;
+            this.chkOnion.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkBolive
             // 
             this.chkBolive.AutoSize = true;
             this.chkBolive.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkBolive.Location = new System.Drawing.Point(88, 56);
-            this.chkBolive.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBolive.Margin = new System.Windows.Forms.Padding(2);
             this.chkBolive.Name = "chkBolive";
             this.chkBolive.Size = new System.Drawing.Size(65, 20);
             this.chkBolive.TabIndex = 5;
             this.chkBolive.Text = "B Olive";
             this.chkBolive.UseVisualStyleBackColor = true;
+            this.chkBolive.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkHam
             // 
             this.chkHam.AutoSize = true;
             this.chkHam.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHam.Location = new System.Drawing.Point(4, 59);
-            this.chkHam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHam.Margin = new System.Windows.Forms.Padding(2);
             this.chkHam.Name = "chkHam";
             this.chkHam.Size = new System.Drawing.Size(52, 20);
             this.chkHam.TabIndex = 4;
             this.chkHam.Text = "Ham";
             this.chkHam.UseVisualStyleBackColor = true;
+            this.chkHam.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkJalepeno
             // 
             this.chkJalepeno.AutoSize = true;
             this.chkJalepeno.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkJalepeno.Location = new System.Drawing.Point(4, 79);
-            this.chkJalepeno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkJalepeno.Margin = new System.Windows.Forms.Padding(2);
             this.chkJalepeno.Name = "chkJalepeno";
             this.chkJalepeno.Size = new System.Drawing.Size(73, 20);
             this.chkJalepeno.TabIndex = 6;
             this.chkJalepeno.Text = "Jalepeno";
             this.chkJalepeno.UseVisualStyleBackColor = true;
+            this.chkJalepeno.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkBpepper
             // 
             this.chkBpepper.AutoSize = true;
             this.chkBpepper.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkBpepper.Location = new System.Drawing.Point(4, 99);
-            this.chkBpepper.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkBpepper.Margin = new System.Windows.Forms.Padding(2);
             this.chkBpepper.Name = "chkBpepper";
             this.chkBpepper.Size = new System.Drawing.Size(88, 20);
             this.chkBpepper.TabIndex = 7;
             this.chkBpepper.Text = "Ban Pepper";
             this.chkBpepper.UseVisualStyleBackColor = true;
+            this.chkBpepper.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkPineapple
             // 
             this.chkPineapple.AutoSize = true;
             this.chkPineapple.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPineapple.Location = new System.Drawing.Point(4, 139);
-            this.chkPineapple.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkPineapple.Margin = new System.Windows.Forms.Padding(2);
             this.chkPineapple.Name = "chkPineapple";
             this.chkPineapple.Size = new System.Drawing.Size(81, 20);
             this.chkPineapple.TabIndex = 9;
             this.chkPineapple.Text = "Pineapple";
             this.chkPineapple.UseVisualStyleBackColor = true;
+            this.chkPineapple.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkSausage
             // 
             this.chkSausage.AutoSize = true;
             this.chkSausage.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkSausage.Location = new System.Drawing.Point(88, 19);
-            this.chkSausage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkSausage.Margin = new System.Windows.Forms.Padding(2);
             this.chkSausage.Name = "chkSausage";
             this.chkSausage.Size = new System.Drawing.Size(70, 20);
             this.chkSausage.TabIndex = 1;
             this.chkSausage.Text = "Sausage";
             this.chkSausage.UseVisualStyleBackColor = true;
+            this.chkSausage.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // chkPep
             // 
             this.chkPep.AutoSize = true;
             this.chkPep.Font = new System.Drawing.Font("Book Antiqua", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkPep.Location = new System.Drawing.Point(4, 19);
-            this.chkPep.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkPep.Margin = new System.Windows.Forms.Padding(2);
             this.chkPep.Name = "chkPep";
             this.chkPep.Size = new System.Drawing.Size(82, 20);
             this.chkPep.TabIndex = 0;
             this.chkPep.Text = "Pepporoni";
             this.chkPep.UseVisualStyleBackColor = true;
+            this.chkPep.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // boxPizzaSize
             // 
@@ -604,9 +618,9 @@
             this.boxPizzaSize.Controls.Add(this.rdoSmall);
             this.boxPizzaSize.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxPizzaSize.Location = new System.Drawing.Point(4, 27);
-            this.boxPizzaSize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxPizzaSize.Margin = new System.Windows.Forms.Padding(2);
             this.boxPizzaSize.Name = "boxPizzaSize";
-            this.boxPizzaSize.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.boxPizzaSize.Padding = new System.Windows.Forms.Padding(2);
             this.boxPizzaSize.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.boxPizzaSize.Size = new System.Drawing.Size(104, 101);
             this.boxPizzaSize.TabIndex = 0;
@@ -617,31 +631,33 @@
             // 
             this.rdoLarge.AutoSize = true;
             this.rdoLarge.Location = new System.Drawing.Point(4, 68);
-            this.rdoLarge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoLarge.Margin = new System.Windows.Forms.Padding(2);
             this.rdoLarge.Name = "rdoLarge";
             this.rdoLarge.Size = new System.Drawing.Size(63, 23);
             this.rdoLarge.TabIndex = 2;
             this.rdoLarge.TabStop = true;
             this.rdoLarge.Text = "Large";
             this.rdoLarge.UseVisualStyleBackColor = true;
+            this.rdoLarge.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // rdoMedium
             // 
             this.rdoMedium.AutoSize = true;
             this.rdoMedium.Location = new System.Drawing.Point(4, 44);
-            this.rdoMedium.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoMedium.Margin = new System.Windows.Forms.Padding(2);
             this.rdoMedium.Name = "rdoMedium";
             this.rdoMedium.Size = new System.Drawing.Size(83, 23);
             this.rdoMedium.TabIndex = 1;
             this.rdoMedium.TabStop = true;
             this.rdoMedium.Text = "Medium";
             this.rdoMedium.UseVisualStyleBackColor = true;
+            this.rdoMedium.CheckedChanged += new System.EventHandler(this.rdoSmall_CheckedChanged);
             // 
             // rdoSmall
             // 
             this.rdoSmall.AutoSize = true;
             this.rdoSmall.Location = new System.Drawing.Point(4, 20);
-            this.rdoSmall.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoSmall.Margin = new System.Windows.Forms.Padding(2);
             this.rdoSmall.Name = "rdoSmall";
             this.rdoSmall.Size = new System.Drawing.Size(65, 23);
             this.rdoSmall.TabIndex = 0;
@@ -681,7 +697,7 @@
             this.Controls.Add(this.lblPizzageddon);
             this.Controls.Add(this.boxCustomerInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPizzaPOS";
             this.Text = "Pizzageddon POS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPizzaPOS_FormClosing_1);

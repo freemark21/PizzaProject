@@ -13,8 +13,15 @@ namespace WindowsFormsApplication1
 {
     public partial class frmPizzaPOS : Form
     {
-        public int orderTotal;
-        public double taxRate = 7.5;
+        public double orderTotal;
+        public double taxRate = .07;
+        public int orderNumber;
+        public bool phoneValid = false;
+        public bool nameValid = false;
+        public bool addressValid = false;
+        public bool cityValid = false;
+        public bool zipValid = false;
+        
         public frmPizzaPOS()
         {
             InitializeComponent();
@@ -31,6 +38,8 @@ namespace WindowsFormsApplication1
             {
                 mtbPhone.ForeColor = Color.Black;
                 lblError.Text = "";
+                phoneValid = true;
+                btnAcceptEnabled();
             }
             else
             {
@@ -80,6 +89,7 @@ namespace WindowsFormsApplication1
             else
             {
                 e.Handled = true;
+                lblError.Text = "Please enter a valid character";
             }
         }
 
@@ -89,6 +99,7 @@ namespace WindowsFormsApplication1
             {
                 txtCustName.ForeColor = Color.Black;
                 lblError.Text = "";
+                nameValid = true;
             }
             else
             {
@@ -128,6 +139,7 @@ namespace WindowsFormsApplication1
             else
             {
                 e.Handled = true;
+                lblError.Text = "Please enter a valid character";
             }
         }
 
@@ -160,6 +172,7 @@ namespace WindowsFormsApplication1
             else
             {
                 e.Handled = true;
+                lblError.Text = "Please enter a valid character";
             }
         }
 
@@ -188,6 +201,7 @@ namespace WindowsFormsApplication1
             else
             {
                 e.Handled = true;
+                lblError.Text = "Please enter a valid character";
             }
         }
 
@@ -202,6 +216,7 @@ namespace WindowsFormsApplication1
             {
                 txtAddress1.ForeColor = Color.Black;
                 lblError.Text = "";
+                addressValid = true;
             }
             else
             {
@@ -217,6 +232,7 @@ namespace WindowsFormsApplication1
             {
                 txtCity.ForeColor = Color.Black;
                 lblError.Text = "";
+                cityValid = true;
             }
             else
             {
@@ -229,7 +245,7 @@ namespace WindowsFormsApplication1
         private void rdoSmall_CheckedChanged(object sender, EventArgs e)
         {
             Pricing();
-        }
+        } //Dynamic pricing
 
         public void Pricing()
         {
@@ -238,11 +254,11 @@ namespace WindowsFormsApplication1
             {
                 orderTotal += 8;
             }
-            else if (rdoMedium.Checked)
+            if (rdoMedium.Checked)
             {
                 orderTotal += 10;
             }
-            else
+            if (rdoLarge.Checked)
             {
                 orderTotal += 15;
             }
@@ -288,13 +304,14 @@ namespace WindowsFormsApplication1
                 orderTotal += 1;
             }
             orderTotal *= Convert.ToInt32(nudQty.Value);
+            orderTotal = orderTotal * taxRate + orderTotal;
             lblTotal.Text = "TOTAL\n" + orderTotal.ToString("c");
-        }
+        } //Pricing()
 
         private void btnPrice_Click(object sender, EventArgs e)
         {
             Pricing();
-        }
+        } //Price button
 
         public void Reset()
         {
@@ -303,7 +320,6 @@ namespace WindowsFormsApplication1
             txtAddress1.Text = String.Empty;
             txtAddress2.Text = String.Empty;
             txtCity.Text = String.Empty;
-            //drpState.
             mtbZip.Text = String.Empty;
             nudQty.Value = 1;
             lblError.Text = String.Empty;
@@ -318,12 +334,13 @@ namespace WindowsFormsApplication1
             chkOnion.Checked = false;
             chkPineapple.Checked = false;
             chkSausage.Checked = false;
+            drpState.SelectedItem = "MN";
             Pricing();
-        }
+        } //Reset()
 
-        private void frmPizzaPOS_Load(object sender, EventArgs e)
+        private void frmPizzaPOS_Load(object sender, EventArgs e) //Form load, U.S. streamreader
         {
-            Reset();
+            lblOrderNum.Text = Convert.ToString(orderNumber);
             string filePath = Application.StartupPath + "/../../../StateAbbrev.txt";
             string currentState;
             try
@@ -339,6 +356,42 @@ namespace WindowsFormsApplication1
             catch
             {
                 MessageBox.Show("Error getting list of States");
+            }
+            Reset();
+        }
+
+        private void mtbZip_Leave(object sender, EventArgs e)
+        {
+            if (mtbZip.Text.Length == 6)
+            {
+                mtbZip.ForeColor = Color.Black;
+                lblError.Text = "";
+                zipValid = true;
+            }
+            else if (mtbZip.Text.Length == 10)
+            {
+                mtbZip.ForeColor = Color.Black;
+                lblError.Text = "";
+                zipValid = true;
+            }
+            else
+            {
+                mtbZip.Focus();
+                mtbZip.ForeColor = Color.Red;
+                lblError.Text = "Please enter a valid zip code";
+            }
+        } //Required field
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            orderNumber += 1;
+        }
+
+        public void btnAcceptEnabled()
+        {
+            if (phoneValid == true && nameValid == true && addressValid == true && cityValid == true && zipValid == true)
+            {
+                btnAccept.Enabled = true;
             }
         }
     }
