@@ -100,6 +100,7 @@ namespace WindowsFormsApplication1
                 txtCustName.ForeColor = Color.Black;
                 lblError.Text = "";
                 nameValid = true;
+                btnAcceptEnabled();
             }
             else
             {
@@ -217,6 +218,7 @@ namespace WindowsFormsApplication1
                 txtAddress1.ForeColor = Color.Black;
                 lblError.Text = "";
                 addressValid = true;
+                btnAcceptEnabled();
             }
             else
             {
@@ -233,6 +235,7 @@ namespace WindowsFormsApplication1
                 txtCity.ForeColor = Color.Black;
                 lblError.Text = "";
                 cityValid = true;
+                btnAcceptEnabled();
             }
             else
             {
@@ -367,6 +370,7 @@ namespace WindowsFormsApplication1
                 mtbZip.ForeColor = Color.Black;
                 lblError.Text = "";
                 zipValid = true;
+                btnAcceptEnabled();
             }
             else if (mtbZip.Text.Length == 10)
             {
@@ -385,6 +389,9 @@ namespace WindowsFormsApplication1
         private void btnAccept_Click(object sender, EventArgs e)
         {
             orderNumber += 1;
+            Reset();
+
+            
         }
 
         public void btnAcceptEnabled()
