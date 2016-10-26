@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace WindowsFormsApplication1
+namespace PizzaProject
 {
     public partial class frmPizzaPOS : Form
     {
@@ -21,7 +21,8 @@ namespace WindowsFormsApplication1
         public bool addressValid = false;
         public bool cityValid = false;
         public bool zipValid = false;
-        
+        public string filePath = Application.StartupPath;
+
         public frmPizzaPOS()
         {
             InitializeComponent();
@@ -344,11 +345,11 @@ namespace WindowsFormsApplication1
         private void frmPizzaPOS_Load(object sender, EventArgs e) //Form load, U.S. streamreader
         {
             lblOrderNum.Text = Convert.ToString(orderNumber);
-            string filePath = Application.StartupPath + "/../../../StateAbbrev.txt";
+
             string currentState;
             try
             {
-                FileStream fsStates = new FileStream(filePath, FileMode.Open);
+                FileStream fsStates = new FileStream(filePath + "/../../../StateAbbrev.txt", FileMode.Open);
                 StreamReader srStates = new StreamReader(fsStates);
                 while (!srStates.EndOfStream)
                 {
@@ -360,6 +361,17 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Error getting list of States");
             }
+            try
+            {
+                FileStream fsLog = new FileStream(filePath + "/../../../Log.txt", FileMode.Open);
+                StreamReader swLog = new StreamReader(fsLog);
+                swLog.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error getting Log file");
+            }
+
             Reset();
         }
 
@@ -388,10 +400,28 @@ namespace WindowsFormsApplication1
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
+
+            Customer objCustomer = new Customer();
+            objCustomer.CustPhone = mtbPhone.Text;
+            objCustomer.CustName = txtCustName.Text;
+            objCustomer.CustAddr1 = txtAddress1.Text;
+            objCustomer.CustAddr2 = txtAddress2.Text;
+            objCustomer.CustCity = txtCity.Text;
+            objCustomer.CustState = drpState.Text;
+            objCustomer.CustZip = mtbZip.Text;
+
+            try
+            {
+                FileStream fsLog = new FileStream(filePath + "/../../../Log.txt", FileMode.Append);
+                StreamWriter swLog = new StreamWriter(fsLog);
+                swLog.WriteLine(orderNumber + ",", objCustomer.CustPhone + ",", objCustomer.CustName + ",", orderTotal + "\n");
+            }
+            catch
+            {
+                MessageBox.Show("Error writing data");
+            }
             orderNumber += 1;
             Reset();
-
-            
         }
 
         public void btnAcceptEnabled()
@@ -401,5 +431,7 @@ namespace WindowsFormsApplication1
                 btnAccept.Enabled = true;
             }
         }
+        
+       
     }
 }
