@@ -409,12 +409,12 @@ namespace PizzaProject
             objCustomer.CustCity = txtCity.Text;
             objCustomer.CustState = drpState.Text;
             objCustomer.CustZip = mtbZip.Text;
-
             try
             {
                 FileStream fsLog = new FileStream(filePath + "/../../../Log.txt", FileMode.Append);
                 StreamWriter swLog = new StreamWriter(fsLog);
-                swLog.WriteLine(orderNumber + ",", objCustomer.CustPhone + ",", objCustomer.CustName + ",", orderTotal + "\n");
+                swLog.WriteLine(orderNumber + "," + objCustomer.CustPhone + "," + objCustomer.CustName + "," + orderTotal + "\n");
+                swLog.Close();
             }
             catch
             {
