@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace PizzaProject
 {
@@ -22,6 +23,13 @@ namespace PizzaProject
         public bool cityValid = false;
         public bool zipValid = false;
         public string filePath = Application.StartupPath;
+        SqlConnection sqlConn;
+        SqlDataAdapter sqlDA;
+        DataTable dtCust;
+        SqlCommandBuilder sqlCmdBuilder;
+        string strDataSrc = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|Pizza.mdf;";
+        string strSQLparms = "Integrated Security=True;Connect Timeout=10";
+
 
         public frmPizzaPOS()
         {
@@ -431,7 +439,38 @@ namespace PizzaProject
                 btnAccept.Enabled = true;
             }
         }
+
+        private void mtbPhone_TextChanged(object sender, EventArgs e)
+        {
+            if (mtbPhone.Text.Length == 10)
+            {
+                CustSearch();
+            }
+        }
         
-       
+        private void CustSearch()
+        {
+            string sqlSelect = "SELECT * FROM Customers WHERE CustPhone '" + mtbPhone.Text.ToString() + "';";
+            string strConn = strDataSrc + strSQLparms;
+            sqlConn = new SqlConnection(strConn);
+            sqlConn.Open();
+            sqlDA = new SqlDataAdapter(sqlSelect, sqlConn);
+            dtCust = new DataTable();
+            sqlDA.Fill(dtCust);
+            if (dtCust.Rows.Count > 0)
+            {
+                txtCustName.Text = dtCust.Rows[0]["CustName"].ToString();
+                txtAddress1.Text = dtCust.Rows[0]["CustAddress1"].ToString();
+                txtAddress2.Text = dtCust.Rows[0]["CustAddress2"].ToString();
+                txtCity.Text = dtCust.Rows[0]["CustCity"].ToString();
+                drpState.Text = dtCust.Rows[0]["CustState"].ToString();
+                mtbZip.Text = dtCust.Rows[0]["CustZip"].ToString();
+            }
+            else
+            {
+                txtCustName.Focus();
+            }
+            dgvCustData.DataSource = dtCust;
+        }
     }
 }
