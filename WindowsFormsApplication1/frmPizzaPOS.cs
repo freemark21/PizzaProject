@@ -27,7 +27,7 @@ namespace PizzaProject
         SqlDataAdapter sqlDA;
         DataTable dtCust;
         SqlCommandBuilder sqlCmdBuilder;
-        string strDataSrc = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|Pizza.mdf;";
+        string strDataSrc = @"Data Source=(LocalDB)\MSSQLLocalDb;AttachDbFilename=|DataDirectory|Pizza.mdf;";
         string strSQLparms = "Integrated Security=True;Connect Timeout=10";
 
 
