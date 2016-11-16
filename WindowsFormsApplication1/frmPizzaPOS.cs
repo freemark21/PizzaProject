@@ -26,7 +26,7 @@ namespace PizzaProject
         SqlConnection sqlConn;
         SqlDataAdapter sqlDA;
         DataTable dtCust;
-        SqlCommandBuilder sqlCmdBuilder;
+        //SqlCommandBuilder sqlCmdBuilder;
         string strDataSrc = @"Data Source=(LocalDB)\MSSQLLocalDb;AttachDbFilename=|DataDirectory|Pizza.mdf;";
         string strSQLparms = "Integrated Security=True;Connect Timeout=10";
 
@@ -450,7 +450,7 @@ namespace PizzaProject
         
         private void CustSearch()
         {
-            string sqlSelect = "SELECT * FROM Customers WHERE CustPhone '" + mtbPhone.Text.ToString() + "';";
+            string sqlSelect = "SELECT * FROM Customers WHERE CustPhone ='" + mtbPhone.Text.ToString() + "';";
             string strConn = strDataSrc + strSQLparms;
             sqlConn = new SqlConnection(strConn);
             sqlConn.Open();
@@ -470,7 +470,7 @@ namespace PizzaProject
             {
                 txtCustName.Focus();
             }
-            dgvCustData.DataSource = dtCust;
+            //dgvCustData.DataSource = dtCust;
         }
     }
 }

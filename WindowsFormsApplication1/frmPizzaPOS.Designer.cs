@@ -75,7 +75,6 @@
             this.rdoSmall = new System.Windows.Forms.RadioButton();
             this.tmrDT = new System.Windows.Forms.Timer(this.components);
             this.lblError = new System.Windows.Forms.Label();
-            this.dgvCustData = new System.Windows.Forms.DataGridView();
             this.boxCustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).BeginInit();
             this.boxOrderInfo.SuspendLayout();
@@ -83,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
             this.boxPizzaToppings.SuspendLayout();
             this.boxPizzaSize.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustData)).BeginInit();
             this.SuspendLayout();
             // 
             // boxCustomerInfo
@@ -686,21 +684,12 @@
             this.lblError.TabIndex = 7;
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvCustData
-            // 
-            this.dgvCustData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustData.Location = new System.Drawing.Point(81, 13);
-            this.dgvCustData.Name = "dgvCustData";
-            this.dgvCustData.Size = new System.Drawing.Size(282, 64);
-            this.dgvCustData.TabIndex = 8;
-            // 
             // frmPizzaPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(683, 447);
-            this.Controls.Add(this.dgvCustData);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.boxOrderInfo);
             this.Controls.Add(this.lblOrderNum);
@@ -724,7 +713,6 @@
             this.boxPizzaToppings.PerformLayout();
             this.boxPizzaSize.ResumeLayout(false);
             this.boxPizzaSize.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -778,7 +766,6 @@
         private System.Windows.Forms.ComboBox drpPayMethod;
         private System.Windows.Forms.Timer tmrDT;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.DataGridView dgvCustData;
     }
 }
 
