@@ -22,11 +22,12 @@ namespace PizzaProject
         public bool addressValid = false;
         public bool cityValid = false;
         public bool zipValid = false;
+        public bool custFound = false;
         public string filePath = Application.StartupPath;
         SqlConnection sqlConn;
         SqlDataAdapter sqlDA;
         DataTable dtCust;
-        //SqlCommandBuilder sqlCmdBuilder;
+        SqlCommandBuilder sqlCmdBuilder;
         string strDataSrc = @"Data Source=(LocalDB)\MSSQLLocalDb;AttachDbFilename=|DataDirectory|Pizza.mdf;";
         string strSQLparms = "Integrated Security=True;Connect Timeout=10";
 
@@ -346,6 +347,7 @@ namespace PizzaProject
             chkOnion.Checked = false;
             chkPineapple.Checked = false;
             chkSausage.Checked = false;
+            custFound = false;
             drpState.SelectedItem = "MN";
             Pricing();
         } //Reset()
@@ -419,10 +421,22 @@ namespace PizzaProject
             objCustomer.CustZip = mtbZip.Text;
             try
             {
-                FileStream fsLog = new FileStream(filePath + "/../../../Log.txt", FileMode.Append);
-                StreamWriter swLog = new StreamWriter(fsLog);
-                swLog.WriteLine(orderNumber + "," + objCustomer.CustPhone + "," + objCustomer.CustName + "," + orderTotal + "\n");
-                swLog.Close();
+                if (!custFound)
+                {
+                    DataRow newCust;
+                    newCust = dtCust.NewRow();
+                    newCust["CustPhone"] = mtbPhone.Text.ToString();
+                    newCust["CustName"] = txtCustName.Text.ToString();
+                    newCust["CustAddress1"] = txtAddress1.Text.ToString();
+                    newCust["CustAddress2"] = txtAddress2.Text.ToString();
+                    newCust["CustCity"] = txtCity.Text.ToString();
+                    newCust["CustState"] = drpState.Text.ToString();
+                    newCust["CustZip"] = mtbZip.Text.ToString();
+                    dtCust.Rows.Add(newCust);
+                    sqlCmdBuilder = new SqlCommandBuilder(sqlDA);
+                    sqlCmdBuilder.GetUpdateCommand();
+                    sqlDA.Update(dtCust);
+                }
             }
             catch
             {
@@ -465,12 +479,25 @@ namespace PizzaProject
                 txtCity.Text = dtCust.Rows[0]["CustCity"].ToString();
                 drpState.Text = dtCust.Rows[0]["CustState"].ToString();
                 mtbZip.Text = dtCust.Rows[0]["CustZip"].ToString();
+                nudQty.Focus();
+                phoneValid = true;
+                addressValid = true;
+                nameValid = true;
+                cityValid = true;
+                zipValid = true;
+                custFound = true;
+                btnAcceptEnabled();
             }
             else
             {
                 txtCustName.Focus();
             }
-            //dgvCustData.DataSource = dtCust;
+            dgvCustData.DataSource = dtCust;
+        }
+
+        private void mnuFileExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -75,6 +75,11 @@
             this.rdoSmall = new System.Windows.Forms.RadioButton();
             this.tmrDT = new System.Windows.Forms.Timer(this.components);
             this.lblError = new System.Windows.Forms.Label();
+            this.dgvCustData = new System.Windows.Forms.DataGridView();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblOrdNumLbl = new System.Windows.Forms.Label();
             this.boxCustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).BeginInit();
             this.boxOrderInfo.SuspendLayout();
@@ -82,6 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
             this.boxPizzaToppings.SuspendLayout();
             this.boxPizzaSize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustData)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // boxCustomerInfo
@@ -304,7 +311,7 @@
             // 
             // lblOrderNum
             // 
-            this.lblOrderNum.Location = new System.Drawing.Point(565, 65);
+            this.lblOrderNum.Location = new System.Drawing.Point(597, 65);
             this.lblOrderNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOrderNum.Name = "lblOrderNum";
             this.lblOrderNum.Size = new System.Drawing.Size(67, 15);
@@ -684,12 +691,57 @@
             this.lblError.TabIndex = 7;
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dgvCustData
+            // 
+            this.dgvCustData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustData.Location = new System.Drawing.Point(84, 12);
+            this.dgvCustData.Name = "dgvCustData";
+            this.dgvCustData.Size = new System.Drawing.Size(313, 64);
+            this.dgvCustData.TabIndex = 8;
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.menuStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFile});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(683, 24);
+            this.menuStrip.TabIndex = 9;
+            // 
+            // mnuFile
+            // 
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileExit});
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(37, 20);
+            this.mnuFile.Text = "File";
+            // 
+            // mnuFileExit
+            // 
+            this.mnuFileExit.Name = "mnuFileExit";
+            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileExit.Text = "Exit";
+            this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
+            // 
+            // lblOrdNumLbl
+            // 
+            this.lblOrdNumLbl.AutoSize = true;
+            this.lblOrdNumLbl.Location = new System.Drawing.Point(551, 65);
+            this.lblOrdNumLbl.Name = "lblOrdNumLbl";
+            this.lblOrdNumLbl.Size = new System.Drawing.Size(41, 13);
+            this.lblOrdNumLbl.TabIndex = 10;
+            this.lblOrdNumLbl.Text = "ORD #";
+            // 
             // frmPizzaPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(683, 447);
+            this.Controls.Add(this.lblOrdNumLbl);
+            this.Controls.Add(this.dgvCustData);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.boxOrderInfo);
             this.Controls.Add(this.lblOrderNum);
@@ -697,7 +749,9 @@
             this.Controls.Add(this.picPizzageddon);
             this.Controls.Add(this.lblPizzageddon);
             this.Controls.Add(this.boxCustomerInfo);
+            this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPizzaPOS";
             this.Text = "Pizzageddon POS";
@@ -713,6 +767,9 @@
             this.boxPizzaToppings.PerformLayout();
             this.boxPizzaSize.ResumeLayout(false);
             this.boxPizzaSize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustData)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -766,6 +823,11 @@
         private System.Windows.Forms.ComboBox drpPayMethod;
         private System.Windows.Forms.Timer tmrDT;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.DataGridView dgvCustData;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.Label lblOrdNumLbl;
     }
 }
 
