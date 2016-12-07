@@ -492,7 +492,6 @@ namespace PizzaProject
             {
                 txtCustName.Focus();
             }
-            dgvCustData.DataSource = dtCust;
         }
 
         private void mnuFileExit_Click(object sender, EventArgs e)
