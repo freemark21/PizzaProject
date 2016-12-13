@@ -25,8 +25,10 @@ namespace PizzaProject
         public bool custFound = false;
         public string filePath = Application.StartupPath;
         SqlConnection sqlConn;
-        SqlDataAdapter sqlDA;
+        SqlDataAdapter sqlDAC;
+        SqlDataAdapter sqlDAO;
         DataTable dtCust;
+        DataTable dtOrders;
         SqlCommandBuilder sqlCmdBuilder;
         string strDataSrc = @"Data Source=(LocalDB)\MSSQLLocalDb;AttachDbFilename=|DataDirectory|Pizza.mdf;";
         string strSQLparms = "Integrated Security=True;Connect Timeout=10";
@@ -350,11 +352,21 @@ namespace PizzaProject
             custFound = false;
             drpState.SelectedItem = "MN";
             Pricing();
+            mtbPhone.Focus();
         } //Reset()
 
         private void frmPizzaPOS_Load(object sender, EventArgs e) //Form load, U.S. streamreader
         {
-            lblOrderNum.Text = Convert.ToString(orderNumber);
+            string sqlSelectLastOrd = "SELECT MAX(OrderNumber)FROM Orders;";
+            string strConn = strDataSrc + strSQLparms;
+            sqlConn = new SqlConnection(strConn);
+            sqlConn.Open();
+            sqlDAO = new SqlDataAdapter(sqlSelectLastOrd, sqlConn);
+            dtOrders = new DataTable();
+            sqlDAO.Fill(dtOrders);
+            orderNumber = Convert.ToInt32(dtOrders.Rows[0][0]);
+            lblOrderNum.Text = Convert.ToString(orderNumber + 1);
+            //sqlDAO.Dispose();
 
             string currentState;
             try
@@ -371,7 +383,7 @@ namespace PizzaProject
             {
                 MessageBox.Show("Error getting list of States");
             }
-            try
+            /*try
             {
                 FileStream fsLog = new FileStream(filePath + "/../../../Log.txt", FileMode.Open);
                 StreamReader swLog = new StreamReader(fsLog);
@@ -380,7 +392,7 @@ namespace PizzaProject
             catch
             {
                 MessageBox.Show("Error getting Log file");
-            }
+            }*/
 
             Reset();
         }
@@ -419,8 +431,8 @@ namespace PizzaProject
             objCustomer.CustCity = txtCity.Text;
             objCustomer.CustState = drpState.Text;
             objCustomer.CustZip = mtbZip.Text;
-            try
-            {
+            /*try
+            {*/
                 if (!custFound)
                 {
                     DataRow newCust;
@@ -433,15 +445,47 @@ namespace PizzaProject
                     newCust["CustState"] = drpState.Text.ToString();
                     newCust["CustZip"] = mtbZip.Text.ToString();
                     dtCust.Rows.Add(newCust);
-                    sqlCmdBuilder = new SqlCommandBuilder(sqlDA);
+                    sqlCmdBuilder = new SqlCommandBuilder(sqlDAC);
                     sqlCmdBuilder.GetUpdateCommand();
-                    sqlDA.Update(dtCust);
+                    sqlDAC.Update(dtCust);
+
+                    DataRow newOrder;
+                    newOrder = dtOrders.NewRow();
+                    newOrder["OrderNumber"] = orderNumber;
+                    newOrder["CustPhone"] = mtbPhone.Text.ToString();
+                    newOrder["OrderDate"] = DateTime.Now.ToShortDateString();
+                    if (rdoSmall.Checked)
+                    {
+                        newOrder["OrderSize"] = "S";
+                    }
+                    else if (rdoMedium.Checked)
+                    {
+                        newOrder["OrderSize"] = "M";
+                    }
+                    else
+                    {
+                        newOrder["OrderSize"] = "L";
+                    }
+                    newOrder["Top1"] = chkPep.Checked;
+                    newOrder["Top2"] = chkOnion.Checked;
+                    newOrder["Top3"] = chkHam.Checked;
+                    newOrder["Top4"] = chkJalepeno.Checked;
+                    newOrder["Top5"] = chkBpepper.Checked;
+                    newOrder["Top6"] = chkMushrooms.Checked;
+                    newOrder["Top7"] = chkPineapple.Checked;
+                    newOrder["Top8"] = chkSausage.Checked;
+                    newOrder["Top9"] = chkGolive.Checked;
+                    newOrder["Top10"] = chkBolive.Checked;
+                    dtOrders.Rows.Add(newOrder);
+                    sqlCmdBuilder = new SqlCommandBuilder(sqlDAO);
+                    sqlCmdBuilder.GetUpdateCommand();
+                    sqlDAO.Update(dtOrders);
                 }
-            }
+            /*}
             catch
             {
                 MessageBox.Show("Error writing data");
-            }
+            }*/
             orderNumber += 1;
             Reset();
         }
@@ -464,13 +508,17 @@ namespace PizzaProject
         
         private void CustSearch()
         {
-            string sqlSelect = "SELECT * FROM Customers WHERE CustPhone ='" + mtbPhone.Text.ToString() + "';";
+            string sqlSelectCust = "SELECT * FROM Customers WHERE CustPhone ='" + mtbPhone.Text.ToString() + "';";
+            string sqlSelectOrders = "SELECT * FROM Orders WHERE CustPhone ='" + mtbPhone.Text.ToString() + "';";
             string strConn = strDataSrc + strSQLparms;
             sqlConn = new SqlConnection(strConn);
             sqlConn.Open();
-            sqlDA = new SqlDataAdapter(sqlSelect, sqlConn);
+            sqlDAC = new SqlDataAdapter(sqlSelectCust, sqlConn);
+            sqlDAO = new SqlDataAdapter(sqlSelectOrders, sqlConn);
             dtCust = new DataTable();
-            sqlDA.Fill(dtCust);
+            dtOrders = new DataTable();
+            sqlDAC.Fill(dtCust);
+            sqlDAO.Fill(dtOrders);
             if (dtCust.Rows.Count > 0)
             {
                 txtCustName.Text = dtCust.Rows[0]["CustName"].ToString();
@@ -479,6 +527,16 @@ namespace PizzaProject
                 txtCity.Text = dtCust.Rows[0]["CustCity"].ToString();
                 drpState.Text = dtCust.Rows[0]["CustState"].ToString();
                 mtbZip.Text = dtCust.Rows[0]["CustZip"].ToString();
+
+
+
+                nudQty.Value = Convert.ToInt32(dtOrders.Rows[dtOrders.Rows.Count - 1]["Qty"]);
+                /*if (dtOrders.Rows[dtOrders.Rows.Count - 1]["Top1"] = true)
+                {
+                    chkPep.Checked = true;
+                }*/
+
+
                 nudQty.Focus();
                 phoneValid = true;
                 addressValid = true;
