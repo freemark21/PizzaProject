@@ -352,6 +352,7 @@ namespace PizzaProject
             custFound = false;
             drpState.SelectedItem = "MN";
             Pricing();
+            drpPayMethod.Text = String.Empty;
             mtbPhone.Focus();
         } //Reset()
 
@@ -399,14 +400,14 @@ namespace PizzaProject
 
         private void mtbZip_Leave(object sender, EventArgs e)
         {
-            if (mtbZip.Text.Length == 6)
+            if (mtbZip.Text.Length == 5)
             {
                 mtbZip.ForeColor = Color.Black;
                 lblError.Text = "";
                 zipValid = true;
                 btnAcceptEnabled();
             }
-            else if (mtbZip.Text.Length == 10)
+            else if (mtbZip.Text.Length == 9)
             {
                 mtbZip.ForeColor = Color.Black;
                 lblError.Text = "";
@@ -466,6 +467,7 @@ namespace PizzaProject
                     {
                         newOrder["OrderSize"] = "L";
                     }
+                    newOrder["Qty"] = nudQty.Value;
                     newOrder["Top1"] = chkPep.Checked;
                     newOrder["Top2"] = chkOnion.Checked;
                     newOrder["Top3"] = chkHam.Checked;
@@ -531,10 +533,16 @@ namespace PizzaProject
 
 
                 nudQty.Value = Convert.ToInt32(dtOrders.Rows[dtOrders.Rows.Count - 1]["Qty"]);
-                /*if (dtOrders.Rows[dtOrders.Rows.Count - 1]["Top1"] = true)
-                {
-                    chkPep.Checked = true;
-                }*/
+                chkPep.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top1"]);
+                chkOnion.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top2"]);
+                chkHam.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top3"]);
+                chkJalepeno.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top4"]);
+                chkBpepper.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top5"]);
+                chkMushrooms.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top6"]);
+                chkPineapple.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top7"]);
+                chkSausage.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top8"]);
+                chkGolive.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top9"]);
+                chkBolive.Checked = Convert.ToBoolean(dtOrders.Rows[dtOrders.Rows.Count - 1]["Top10"]);
 
 
                 nudQty.Focus();
@@ -555,6 +563,38 @@ namespace PizzaProject
         private void mnuFileExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void drpPayMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (drpPayMethod.SelectedIndex == 0)
+            {
+                frmCreditCard FormCreditCard = new frmCreditCard();
+                FormCreditCard.ShowDialog();
+            }
+        }
+
+        private void chkMute_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkMute.Checked)
+            {
+                wmpSound.settings.mute = true;
+            }
+            else
+            {
+                wmpSound.settings.mute = false;
+            }
+        }
+
+        private void mnuFilePrice_Click(object sender, EventArgs e)
+        {
+            Pricing();
+        }
+
+        private void mnuFileReset_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }
