@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPizzaPOS));
             this.boxCustomerInfo = new System.Windows.Forms.GroupBox();
             this.drpState = new System.Windows.Forms.ComboBox();
             this.txtCustName = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.mtbPhone = new System.Windows.Forms.MaskedTextBox();
             this.lblPizzageddon = new System.Windows.Forms.Label();
-            this.picPizzageddon = new System.Windows.Forms.PictureBox();
             this.lblTimeDate = new System.Windows.Forms.Label();
             this.lblOrderNum = new System.Windows.Forms.Label();
             this.boxOrderInfo = new System.Windows.Forms.GroupBox();
@@ -78,19 +78,35 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFilePrice = new System.Windows.Forms.ToolStripMenuItem();
             this.lblOrdNumLbl = new System.Windows.Forms.Label();
+            this.picPizzageddon = new System.Windows.Forms.PictureBox();
+            this.wmpSound = new AxWMPLib.AxWindowsMediaPlayer();
+            this.chkMute = new System.Windows.Forms.CheckBox();
+            this.mnuFileReset = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmn1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cREDITCARDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cASHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cHECKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boxCustomerInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).BeginInit();
             this.boxOrderInfo.SuspendLayout();
             this.boxButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
             this.boxPizzaToppings.SuspendLayout();
             this.boxPizzaSize.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpSound)).BeginInit();
+            this.cmn1.SuspendLayout();
             this.SuspendLayout();
             // 
             // boxCustomerInfo
             // 
+            this.boxCustomerInfo.Controls.Add(this.mtbPhone);
             this.boxCustomerInfo.Controls.Add(this.drpState);
             this.boxCustomerInfo.Controls.Add(this.txtCustName);
             this.boxCustomerInfo.Controls.Add(this.txtCity);
@@ -104,7 +120,6 @@
             this.boxCustomerInfo.Controls.Add(this.lblAddress1);
             this.boxCustomerInfo.Controls.Add(this.lblCustName);
             this.boxCustomerInfo.Controls.Add(this.lblPhone);
-            this.boxCustomerInfo.Controls.Add(this.mtbPhone);
             this.boxCustomerInfo.Font = new System.Drawing.Font("Book Antiqua", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxCustomerInfo.Location = new System.Drawing.Point(8, 82);
             this.boxCustomerInfo.Margin = new System.Windows.Forms.Padding(2);
@@ -128,6 +143,7 @@
             // 
             // txtCustName
             // 
+            this.txtCustName.ContextMenuStrip = this.cmn1;
             this.txtCustName.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustName.Location = new System.Drawing.Point(8, 75);
             this.txtCustName.Margin = new System.Windows.Forms.Padding(2);
@@ -140,6 +156,7 @@
             // 
             // txtCity
             // 
+            this.txtCity.ContextMenuStrip = this.cmn1;
             this.txtCity.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Location = new System.Drawing.Point(8, 228);
             this.txtCity.Margin = new System.Windows.Forms.Padding(2);
@@ -152,6 +169,7 @@
             // 
             // txtAddress2
             // 
+            this.txtAddress2.ContextMenuStrip = this.cmn1;
             this.txtAddress2.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress2.Location = new System.Drawing.Point(8, 182);
             this.txtAddress2.Margin = new System.Windows.Forms.Padding(2);
@@ -163,6 +181,7 @@
             // 
             // txtAddress1
             // 
+            this.txtAddress1.ContextMenuStrip = this.cmn1;
             this.txtAddress1.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress1.Location = new System.Drawing.Point(8, 136);
             this.txtAddress1.Margin = new System.Windows.Forms.Padding(2);
@@ -182,6 +201,7 @@
             this.mtbZip.Name = "mtbZip";
             this.mtbZip.Size = new System.Drawing.Size(72, 24);
             this.mtbZip.TabIndex = 13;
+            this.mtbZip.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbZip.Leave += new System.EventHandler(this.mtbZip_Leave);
             // 
             // lblZip
@@ -242,7 +262,7 @@
             // lblCustName
             // 
             this.lblCustName.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustName.Location = new System.Drawing.Point(82, 54);
+            this.lblCustName.Location = new System.Drawing.Point(4, 55);
             this.lblCustName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustName.Name = "lblCustName";
             this.lblCustName.Size = new System.Drawing.Size(129, 18);
@@ -263,6 +283,7 @@
             // 
             // mtbPhone
             // 
+            this.mtbPhone.ContextMenuStrip = this.cmn1;
             this.mtbPhone.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbPhone.Location = new System.Drawing.Point(115, 29);
             this.mtbPhone.Margin = new System.Windows.Forms.Padding(2);
@@ -284,18 +305,6 @@
             this.lblPizzageddon.Size = new System.Drawing.Size(292, 76);
             this.lblPizzageddon.TabIndex = 0;
             this.lblPizzageddon.Text = "Pizzageddon";
-            // 
-            // picPizzageddon
-            // 
-            this.picPizzageddon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picPizzageddon.Image = global::PizzaProject.Properties.Resources.Pizzageddon;
-            this.picPizzageddon.Location = new System.Drawing.Point(406, 4);
-            this.picPizzageddon.Margin = new System.Windows.Forms.Padding(2);
-            this.picPizzageddon.Name = "picPizzageddon";
-            this.picPizzageddon.Size = new System.Drawing.Size(111, 76);
-            this.picPizzageddon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPizzageddon.TabIndex = 2;
-            this.picPizzageddon.TabStop = false;
             // 
             // lblTimeDate
             // 
@@ -338,13 +347,19 @@
             // 
             // drpPayMethod
             // 
+            this.drpPayMethod.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drpPayMethod.FormattingEnabled = true;
+            this.drpPayMethod.Items.AddRange(new object[] {
+            "CREDIT CARD",
+            "CASH",
+            "CHECK"});
             this.drpPayMethod.Location = new System.Drawing.Point(168, 139);
             this.drpPayMethod.Margin = new System.Windows.Forms.Padding(2);
             this.drpPayMethod.Name = "drpPayMethod";
             this.drpPayMethod.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.drpPayMethod.Size = new System.Drawing.Size(176, 35);
+            this.drpPayMethod.Size = new System.Drawing.Size(176, 31);
             this.drpPayMethod.TabIndex = 5;
+            this.drpPayMethod.SelectedIndexChanged += new System.EventHandler(this.drpPayMethod_SelectedIndexChanged);
             // 
             // boxButtons
             // 
@@ -694,7 +709,8 @@
             this.menuStrip.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.menuStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+            this.mnuFile,
+            this.paymentToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(683, 24);
@@ -703,7 +719,9 @@
             // mnuFile
             // 
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileExit});
+            this.mnuFileExit,
+            this.mnuFilePrice,
+            this.mnuFileReset});
             this.mnuFile.Name = "mnuFile";
             this.mnuFile.Size = new System.Drawing.Size(37, 20);
             this.mnuFile.Text = "File";
@@ -711,9 +729,16 @@
             // mnuFileExit
             // 
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(92, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
+            // 
+            // mnuFilePrice
+            // 
+            this.mnuFilePrice.Name = "mnuFilePrice";
+            this.mnuFilePrice.Size = new System.Drawing.Size(152, 22);
+            this.mnuFilePrice.Text = "Price";
+            this.mnuFilePrice.Click += new System.EventHandler(this.mnuFilePrice_Click);
             // 
             // lblOrdNumLbl
             // 
@@ -724,12 +749,113 @@
             this.lblOrdNumLbl.TabIndex = 10;
             this.lblOrdNumLbl.Text = "ORD #";
             // 
+            // picPizzageddon
+            // 
+            this.picPizzageddon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picPizzageddon.Image = global::PizzaProject.Properties.Resources.Pizzageddon;
+            this.picPizzageddon.Location = new System.Drawing.Point(406, 4);
+            this.picPizzageddon.Margin = new System.Windows.Forms.Padding(2);
+            this.picPizzageddon.Name = "picPizzageddon";
+            this.picPizzageddon.Size = new System.Drawing.Size(111, 76);
+            this.picPizzageddon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPizzageddon.TabIndex = 2;
+            this.picPizzageddon.TabStop = false;
+            // 
+            // wmpSound
+            // 
+            this.wmpSound.Enabled = true;
+            this.wmpSound.Location = new System.Drawing.Point(73, 27);
+            this.wmpSound.Name = "wmpSound";
+            this.wmpSound.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSound.OcxState")));
+            this.wmpSound.Size = new System.Drawing.Size(37, 30);
+            this.wmpSound.TabIndex = 11;
+            this.wmpSound.Visible = false;
+            // 
+            // chkMute
+            // 
+            this.chkMute.AutoSize = true;
+            this.chkMute.Checked = true;
+            this.chkMute.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMute.Location = new System.Drawing.Point(600, 4);
+            this.chkMute.Name = "chkMute";
+            this.chkMute.Size = new System.Drawing.Size(57, 17);
+            this.chkMute.TabIndex = 12;
+            this.chkMute.Text = "MUTE";
+            this.chkMute.UseVisualStyleBackColor = true;
+            this.chkMute.CheckedChanged += new System.EventHandler(this.chkMute_CheckedChanged);
+            // 
+            // mnuFileReset
+            // 
+            this.mnuFileReset.Name = "mnuFileReset";
+            this.mnuFileReset.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileReset.Text = "Reset";
+            this.mnuFileReset.Click += new System.EventHandler(this.mnuFileReset_Click);
+            // 
+            // cmn1
+            // 
+            this.cmn1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cutToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem});
+            this.cmn1.Name = "cmn1";
+            this.cmn1.Size = new System.Drawing.Size(103, 70);
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.cutToolStripMenuItem.Text = "Cut";
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            // 
+            // paymentToolStripMenuItem
+            // 
+            this.paymentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cREDITCARDToolStripMenuItem,
+            this.cASHToolStripMenuItem,
+            this.cHECKToolStripMenuItem});
+            this.paymentToolStripMenuItem.Name = "paymentToolStripMenuItem";
+            this.paymentToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.paymentToolStripMenuItem.Text = "Payment";
+            this.paymentToolStripMenuItem.CheckedChanged += new System.EventHandler(this.drpPayMethod_SelectedIndexChanged);
+            // 
+            // cREDITCARDToolStripMenuItem
+            // 
+            this.cREDITCARDToolStripMenuItem.Name = "cREDITCARDToolStripMenuItem";
+            this.cREDITCARDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cREDITCARDToolStripMenuItem.Text = "CREDIT CARD";
+            this.cREDITCARDToolStripMenuItem.CheckedChanged += new System.EventHandler(this.drpPayMethod_SelectedIndexChanged);
+            // 
+            // cASHToolStripMenuItem
+            // 
+            this.cASHToolStripMenuItem.Name = "cASHToolStripMenuItem";
+            this.cASHToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cASHToolStripMenuItem.Text = "CASH";
+            // 
+            // cHECKToolStripMenuItem
+            // 
+            this.cHECKToolStripMenuItem.Name = "cHECKToolStripMenuItem";
+            this.cHECKToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cHECKToolStripMenuItem.Text = "CHECK";
+            // 
             // frmPizzaPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(683, 447);
+            this.Controls.Add(this.chkMute);
+            this.Controls.Add(this.wmpSound);
             this.Controls.Add(this.lblOrdNumLbl);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.boxOrderInfo);
@@ -748,7 +874,6 @@
             this.Load += new System.EventHandler(this.frmPizzaPOS_Load);
             this.boxCustomerInfo.ResumeLayout(false);
             this.boxCustomerInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).EndInit();
             this.boxOrderInfo.ResumeLayout(false);
             this.boxButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).EndInit();
@@ -758,6 +883,9 @@
             this.boxPizzaSize.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPizzageddon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpSound)).EndInit();
+            this.cmn1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -815,6 +943,18 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.Label lblOrdNumLbl;
+        private AxWMPLib.AxWindowsMediaPlayer wmpSound;
+        private System.Windows.Forms.CheckBox chkMute;
+        private System.Windows.Forms.ToolStripMenuItem mnuFilePrice;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileReset;
+        private System.Windows.Forms.ContextMenuStrip cmn1;
+        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cREDITCARDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cASHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cHECKToolStripMenuItem;
     }
 }
 
